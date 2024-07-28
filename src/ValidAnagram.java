@@ -1,29 +1,8 @@
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 public class ValidAnagram {
 
-    public static boolean isAnagram(String s, String t) {
-
-        if (s.length() != t.length()) {
-            return false;
-        }
-
-        Set<Character> set = new HashSet<>();
-        char[] charArray = s.toCharArray();
-        for (char c : charArray) {
-            set.add(c);
-        }
-
-        for (int i = 0; i < t.length(); i++) {
-            if (!set.contains(t.charAt(i))) {
-                return false;
-            }
-        }
-        return true;
-    }
 
     public static boolean isAnagram2(String s, String t) {
 
@@ -55,7 +34,7 @@ public class ValidAnagram {
 
     }
 
-    public boolean isAnagram3(String s, String t) {
+    public static boolean isAnagram3(String s, String t) {
         if (s.length() != t.length()) return false;
 
         int[] store = new int[26];
@@ -73,6 +52,6 @@ public class ValidAnagram {
     public static void main(String[] args) {
         String s = "racecar";
         String t = "carrace";
-        System.out.println(isAnagram(s, t));
+        System.out.println(isAnagram3(s, t));
     }
 }
